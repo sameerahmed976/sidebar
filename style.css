@@ -84,7 +84,23 @@ a {
   box-shadow: var(--box-shadow-1);
   cursor: pointer;
   transition: var(--transition-8);
+  -webkit-animation: bounce 1s ease-in-out infinite alternate;
   animation: bounce 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
 
 @keyframes bounce {
@@ -108,7 +124,7 @@ a {
 
 .sidebar {
   background-color: aliceblue;
-  width: 30%;
+  width: 100%;
   height: 100vh;
   transition: var(--transition-8);
   overflow: hidden;
@@ -121,11 +137,11 @@ a {
 
 .navbar-small {
   display: flex;
-  min-height: 18vh;
+  min-height: 16vh;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.4rem;
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 
 .close {
@@ -143,8 +159,7 @@ a {
 }
 
 .nav-links {
-  margin-top: 15vh;
-  margin-bottom: 15vh;
+  margin-bottom: 8vh;
 }
 
 .nav-links li a {
@@ -177,8 +192,48 @@ a {
   color: #6573c3;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 600px) {
   .sidebar {
-    width: 100%;
+    width: 50%;
+  }
+
+  .navbar-small {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .nav-links {
+    margin-bottom: 10vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    width: 50%;
+  }
+
+  .navbar-small {
+    padding-left: 2rem;
+    padding-right: 2.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .sidebar {
+    width: 30%;
+  }
+
+  .navbar-small {
+    padding-left: 2rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sidebar {
+    width: 35%;
+  }
+
+  .navbar-small {
+    padding-left: 2rem;
+    padding-right: 2.5rem;
   }
 }
